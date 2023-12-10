@@ -241,7 +241,7 @@ void handleReboot() {
 
 void sendIFTTTNotification() {
   HTTPClient http;
-  http.begin("http://maker.ifttt.com/trigger/greenhouse_temp_low/with/key/cqJ5PyBjfCeq-t-QcJseyk");
+  http.begin("http://maker.ifttt.com/trigger/ASSETNAME/with/key/YOURKEY");
   
   Serial.println("Sending IFTTT Notification...");
   int httpResponseCode = http.GET();
@@ -256,7 +256,7 @@ void sendIFTTTNotification() {
 
   void sendHeartbeat(float temperature) {
   HTTPClient http;
-  String url = "http://maker.ifttt.com/trigger/daily_heartbeat/with/key/cqJ5PyBjfCeq-t-QcJseyk";
+  String url = "http://maker.ifttt.com/trigger/ASSETNAME/with/key/YOURKEY";
   url += "?value1=" + String(temperature); // Add temperature as a parameter
 
   http.begin(url);
