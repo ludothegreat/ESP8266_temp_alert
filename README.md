@@ -1,6 +1,6 @@
-# Greenhouse Temperature Alert System
+# ESP8266 Temperature Alert System
 
-This project is an IoT-based greenhouse temperature alert system using an ESP8266. It monitors the temperature inside a greenhouse and provides alerts and real-time data through a web interface. The system uses a buzzer and LED for local alerts and integrates with IFTTT for notifications.
+This project is an IoT-based temperature alert system using an ESP8266. It monitors the temperature inside and provides alerts and real-time data through a web interface. The system uses a buzzer and LED for local alerts and integrates with IFTTT for notifications.
 
 ## Features
 
@@ -13,7 +13,7 @@ This project is an IoT-based greenhouse temperature alert system using an ESP826
 
 ## Hardware Components
 
-- Adafruit Feather HUZZAH ESP8266
+- Adafruit Feather HUZZAH ESP8266 (any ESP8266 device should work)
 - DHT20/AHT20 Temperature and Humidity Sensor
 - Piezo Buzzer
 - LED
@@ -37,6 +37,8 @@ This project is an IoT-based greenhouse temperature alert system using an ESP826
 1. **Hardware Setup**:
    - Connect the DHT20/AHT20 sensor, buzzer, and LED to the ESP8266 according to the GPIO configuration.
    - Ensure the LED is connected with a current-limiting resistor.
+   - ![PXL_20231203_011112851](https://github.com/ludothegreat/ESP8266_temp_alert/assets/131192727/6c6aa859-f013-4abc-b2af-30ceb105accc)
+
 
 2. **Software Setup**:
    - Open the project code in Arduino IDE.
@@ -46,6 +48,7 @@ This project is an IoT-based greenhouse temperature alert system using an ESP826
 3. **Using the System**:
    - Once powered, the ESP8266 will start monitoring the temperature.
    - Access the web interface via the ESP8266's IP address for real-time data and controls.
+        - ![image](https://github.com/ludothegreat/ESP8266_temp_alert/assets/131192727/5140e09c-7b02-41eb-be35-b25e3738e3ab)
    - Adjust the temperature threshold as needed.
    - The buzzer and LED will alert locally when the temperature falls below the threshold.
    - IFTTT notifications will be sent for remote alerts.
