@@ -2,8 +2,10 @@
 
 This project is an IoT-based temperature alert system using an ESP8266. It monitors the temperature inside and provides alerts and real-time data through a web interface. The system uses a buzzer and LED for local alerts and integrates with IFTTT for notifications.
 
-I have been wanting to mess around with ESP microcontrollers for a while now, so I built this to use in my greenhouse and learn the fundamentals of how the ESP devices work.
-https://youtube.com/shorts/KhjjuUKmlEc
+I have been wanting to mess around with ESP microcontrollers for a while now, so I built this to use in my greenhouse and learn how the ESP devices work.
+
+[![ESP8266 Temp Alert](http://img.youtube.com/vi/KhjjuUKmlEc/0.jpg)](https://www.youtube.com/shorts/KhjjuUKmlEc "Greenhouse Temp Alert System Demo")
+
 
 ## Features
 
