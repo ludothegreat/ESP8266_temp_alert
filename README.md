@@ -1,4 +1,4 @@
-# Greenhouse Temperature Alert System - Version 1
+# Greenhouse Temperature Alert System
 
 This project is an IoT-based greenhouse temperature alert system using an ESP8266. It monitors the temperature inside a greenhouse and provides alerts and real-time data through a web interface. The system uses a buzzer and LED for local alerts and integrates with IFTTT for notifications.
 
@@ -58,6 +58,7 @@ This project is an IoT-based greenhouse temperature alert system using an ESP826
 ## Future Enhancements
 
 - Integration with additional sensors (e.g., humidity, light intensity)
+- Additional remote alert devices
 - Implementing OTA (Over-The-Air) firmware updates
 - Enhanced power management for battery operation
 - Security improvements for the web interface
