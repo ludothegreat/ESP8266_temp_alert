@@ -164,24 +164,28 @@ void loop() {
   delay(2000); // Wait for 2 seconds before next read
 }
 
+//Website
 void handleRoot() {
   sensors_event_t humidity, temp;
   aht.getEvent(&humidity, &temp); // Read the data
   float temperatureF = temp.temperature * 9 / 5 + 32; // Convert to Fahrenheit
-  temperatureF -= 10; // Adjust the temperature
+  //adjust the temp sensor if needed. If not, comment out
+  temperatureF -= 10;
 
   unsigned long currentTime = millis();
   long rssi = WiFi.RSSI(); // Get Wi-Fi signal strength
   unsigned long timeSinceLastHeartbeat = currentTime - lastHeartbeatTime;
   unsigned long timeUntilNextHeartbeat = heartbeatInterval - timeSinceLastHeartbeat;
-
+//Start of HTML for site
   String html = "<html><head><title>Greenhouse Temp Alert Sensor Readings</title></head><body>";
   html += "<h1>Greenhouse Temp Alert</h1>";
+  
   // Add form for setting the threshold
   html += "<form action='/set-threshold' method='GET'>";
   html += "Temperature Threshold (F): <input type='number' name='threshold' value='" + String(temperatureThreshold) + "' step='0.1'>";
   html += "<input type='submit' value='Set Threshold'>";
   html += "</form></p>";
+  
   // Current Sensor Readings
   html += "<h2>Current Sensor Readings</h2>";
   html += "<p>Temperature: " + String(temperatureF) + "F</p>";
@@ -208,7 +212,7 @@ void handleRoot() {
           "</script>";
   
    html += "</body></html>";
-  
+  //End HTML for site
   server.send(200, "text/html", html);
 }
 
@@ -227,7 +231,7 @@ void handleTestHeartbeat() {
   sensors_event_t humidity, temp;
   aht.getEvent(&humidity, &temp); // Read the data
   float currentTemp = temp.temperature * 9 / 5 + 32; // Convert to Fahrenheit and get current temperature
-  currentTemp -= 10; // Adjust the temperature
+  currentTemp -= 10; // Adjust the temperature if needed
 
   sendHeartbeat(currentTemp);
   server.send(200, "text/plain", "Heartbeat sent");
